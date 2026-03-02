@@ -70,7 +70,7 @@ function CemberinAlani(r,pi) {
   const alan = pi * r * r;
   return alan;
 }
-console.log(CemberinAlani(15,pi));
+//console.log(CemberinAlani(15,pi));
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -103,27 +103,59 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-/* kodlar buraya */
+enkucuk = sayilar[0];
+enbuyuk = sayilar[0];
+for ( let i = 0; i < sayilar.length; i++) {
+  const sayi = sayilar[i];
+  if (sayi < enkucuk) {
+    enkucuk = sayi;
+  }
+  if (sayi > enbuyuk) {
+    enbuyuk = sayi;
+  }
+}
+//console.log("En küçük sayı: ",enkucuk);
+//console.log("En büyük sayı: ",enbuyuk);
 
 // 3b çözümü:
 
-/* kodlar buraya */
+ucetambolunenler =[];
+sayilar.forEach((sayi) => {
+  if(sayi % 3 === 0) {
+    ucetambolunenler.push(sayi);
+  }
+})
+//console.log(ucetambolunenler);
 
 // 3c çözümü:
 
-/* kodlar buraya */
+const sonuc = ucetambolunenler.reduce((toplam,sayi) => {
+  return toplam + sayi;
+  
+},0);
+//console.log(sonuc);
 
 // 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar = [];
+sayilar.filter((sayi) => {
+  if(sayi < 500);
+  besyuzdenkucuksayilar.push(sayi);
+}) 
+//console.log(besyuzdenkucuksayilar);
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar = [...sayilar];
+siralisayilar.sort((a,b) => a - b);
+sayilar.forEach((sayi) => {
+if (sayi < 500) {
+siralisayilar.push(sayi);
+}
+})
+//console.log(siralisayilar);
 
 // 3f çözümü
-
-/* kodlar buraya */
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
