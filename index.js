@@ -129,35 +129,47 @@ sayilar.forEach((sayi) => {
 
 // 3c çözümü:
 
-const sonuc = ucetambolunenler.reduce((toplam,sayi) => {
+ucebolunenlerintoplami = ucetambolunenler.reduce((toplam,sayi) => {
   return toplam + sayi;
   
 },0);
-//console.log(sonuc);
+//console.log(ucetambolunenlerintoplami);
 
 // 3d çözümü
 
 besyuzdenkucuksayilar = [];
 sayilar.filter((sayi) => {
-  if(sayi < 500);
+  if(sayi < 500)
   besyuzdenkucuksayilar.push(sayi);
 }) 
 //console.log(besyuzdenkucuksayilar);
 
 // 3e çözümü
 
-siralisayilar = [...sayilar];
+siralisayilar = sayilar.filter(sayi => sayi < 500);
 siralisayilar.sort((a,b) => a - b);
-sayilar.forEach((sayi) => {
-if (sayi < 500) {
-siralisayilar.push(sayi);
-}
-})
+
 //console.log(siralisayilar);
 
 // 3f çözümü
 
-/*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
+tekraredensayilar = [];
+let kackeretekrar = {};
+for (let i = 0; i < sayilar.length; i++) {
+  let sayi = sayilar[i];
+if(kackeretekrar[sayi] === undefined) {
+  kackeretekrar[sayi] = 1;
+} else {
+  kackeretekrar[sayi] = kackeretekrar[sayi] + 1;
+}
+}
+
+for(let sayi in kackeretekrar) {
+  if(kackeretekrar[sayi] > 1) {
+    tekraredensayilar.push(`${sayi} sayısı ${kackeretekrar[sayi]} kere tekrar edilmiştir`);
+}
+}
+
 
 function sa() {
   console.log("Kodlar çalışıyor");
